@@ -1,0 +1,235 @@
+/* =========================
+   Base / Reset suave
+========================= */
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #0b0d10;
+
+  /* Paneles */
+  --panel: rgba(255,255,255,0.07);
+  --panel2: rgba(255,255,255,0.11);
+
+  /* Texto */
+  --text: rgba(255,255,255,0.94);
+  --muted: rgba(255,255,255,0.68);
+  --line: rgba(255,255,255,0.16);
+
+  /* Paleta más colorida */
+  --c1: #7dd3fc;   /* azul */
+  --c2: #a78bfa;   /* violeta */
+  --c3: #f472b6;   /* rosa */
+  --c4: #34d399;   /* verde */
+  --c5: #facc15;   /* amarillo */
+
+  /* Accentos */
+  --accent: var(--c4);
+  --accent2: var(--c1);
+
+  --shadow: 0 18px 50px rgba(0,0,0,0.45);
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 12% 8%, rgba(125, 211, 252, 0.22), transparent 55%),
+    radial-gradient(1000px 650px at 88% 18%, rgba(167, 139, 250, 0.20), transparent 55%),
+    radial-gradient(900px 650px at 20% 92%, rgba(244, 114, 182, 0.16), transparent 55%),
+    radial-gradient(900px 650px at 85% 90%, rgba(52, 211, 153, 0.14), transparent 55%),
+    radial-gradient(800px 600px at 50% 110%, rgba(250, 204, 21, 0.10), transparent 60%),
+    var(--bg);
+  line-height: 1.55;
+}
+
+/* Contenedor general centrado */
+header, .intro, .gallery, footer{
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================
+   Header
+========================= */
+header{
+  padding: 56px 0 18px;
+}
+
+h1{
+  margin: 0;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  letter-spacing: -0.03em;
+  font-weight: 650;
+
+  /* Título con degradado colorido */
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* =========================
+   Intro
+========================= */
+.intro{
+  margin-top: 10px;
+  padding: 22px 22px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04)),
+    radial-gradient(600px 260px at 20% 0%, rgba(125, 211, 252, 0.14), transparent 60%),
+    radial-gradient(600px 260px at 85% 10%, rgba(244, 114, 182, 0.12), transparent 60%);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.intro p{
+  margin: 0;
+  color: rgba(255,255,255,0.86);
+  font-size: 1.05rem;
+}
+
+/* =========================
+   Galería (Grid)
+========================= */
+.gallery{
+  margin-top: 28px;
+  padding: 0 0 38px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+/* Tarjeta de obra */
+.piece{
+  grid-column: span 6;
+  display: block;
+  padding: 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+
+  /* Fondo más vivo pero elegante */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+/* Brillos coloridos */
+.piece::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 240px at 10% 0%, rgba(125, 211, 252, 0.22), transparent 55%),
+    radial-gradient(600px 240px at 100% 100%, rgba(167, 139, 250, 0.18), transparent 55%),
+    radial-gradient(600px 240px at 25% 110%, rgba(52, 211, 153, 0.14), transparent 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Línea arcoíris al hover */
+.piece::after{
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.piece h2{
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+}
+
+.piece p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.piece:hover{
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(255,255,255,0.28);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05));
+}
+
+.piece:hover::after{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Focus accesible (teclado) */
+.piece:focus{
+  outline: none;
+}
+.piece:focus-visible{
+  outline: 2px solid rgba(125,211,252,0.55);
+  outline-offset: 4px;
+}
+
+/* =========================
+   Footer
+========================= */
+footer{
+  padding: 22px 0 42px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  color: rgba(255,255,255,0.60);
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px){
+  header{ padding-top: 44px; }
+  .piece{ grid-column: span 12; }
+  .intro{ padding: 18px; }
+}
+
+@media (max-width: 520px){
+  header, .intro, .gallery, footer{
+    width: min(1100px, calc(100% - 32px));
+  }
+  .piece{
+    padding: 16px;
+    border-radius: 16px;
+  }
+  
+}
+
+/* Barra completa para la memoria */
+.piece-wide{
+  grid-column: span 12;   /* ocupa toda la fila */
+  text-align: center;       /* o center si quieres */
+  font-weight: 600;
+}
+
+
