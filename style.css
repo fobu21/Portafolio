@@ -1,6 +1,4 @@
-/* =========================
-   Base
-========================= */
+
 *{ box-sizing: border-box; }
 
 :root{
@@ -15,7 +13,7 @@
   --accent2: #a78bfa;
 
   --max: 980px;
-  --measure: 72ch; /* ancho cómodo de lectura */
+  --measure: 72ch; 
 }
 
 html, body{
@@ -32,13 +30,13 @@ body{
   text-rendering: geometricPrecision;
 }
 
-/* Contenedores */
+
 header, .intro, .gallery, footer, .memory{
   width: min(var(--max), calc(100% - 56px));
   margin: 0 auto;
 }
 
-/* Links */
+
 a{
   color: var(--text);
   text-decoration: none;
@@ -47,9 +45,7 @@ a:hover{
   color: var(--accent);
 }
 
-/* =========================
-   Header (Home)
-========================= */
+
 header{
   padding: 72px 0 28px;
 }
@@ -68,10 +64,6 @@ h1{
 }
 
 
-
-/* =========================
-   Intro
-========================= */
 .intro{
   padding: 18px 0 0;
 }
@@ -82,9 +74,6 @@ h1{
   color: var(--muted);
 }
 
-/* =========================
-   Gallery
-========================= */
 .gallery{
   margin-top: 52px;
   display: grid;
@@ -112,7 +101,6 @@ h1{
   max-width: 44ch;
 }
 
-/* subrayado elegante al hover */
 .piece h2{
   display: inline-block;
   position: relative;
@@ -133,16 +121,14 @@ h1{
   width: 100%;
 }
 
-/* Focus accesible */
+
 .piece:focus-within{
   outline: 2px solid rgba(125,211,252,0.35);
   outline-offset: 10px;
   border-radius: 12px;
 }
 
-/* =========================
-   Páginas de obra (si las usas)
-========================= */
+
 .page{
   padding: 36px 0 64px;
 }
@@ -169,9 +155,7 @@ h1{
   color: rgba(255,255,255,0.78);
 }
 
-/* =========================
-   Memoria
-========================= */
+
 .memory{
   padding: 20px 0 72px;
 }
@@ -205,9 +189,7 @@ h1{
   border-top: 1px solid var(--line);
 }
 
-/* =========================
-   Footer
-========================= */
+
 footer{
   margin-top: 66px;
   padding: 32px 0 44px;
@@ -217,9 +199,7 @@ footer{
    text-align: center;
 }
 
-/* =========================
-   Responsive
-========================= */
+
 @media (max-width: 760px){
   header, .intro, .gallery, footer, .memory{
     width: min(var(--max), calc(100% - 36px));
@@ -229,3 +209,4 @@ footer{
     gap: 28px;
   }
 }
+
