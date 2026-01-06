@@ -1,6 +1,4 @@
-/* =========================
-   Base / Reset suave
-========================= */
+
 * { box-sizing: border-box; }
 
 :root{
@@ -15,14 +13,12 @@
   --muted: rgba(255,255,255,0.68);
   --line: rgba(255,255,255,0.16);
 
-  /* Paleta más colorida */
-  --c1: #7dd3fc;   /* azul */
-  --c2: #a78bfa;   /* violeta */
-  --c3: #f472b6;   /* rosa */
-  --c4: #34d399;   /* verde */
-  --c5: #facc15;   /* amarillo */
+  --c1: #7dd3fc;   
+  --c2: #a78bfa;   
+  --c3: #f472b6;   
+  --c4: #34d399;   
+  --c5: #facc15;   
 
-  /* Accentos */
   --accent: var(--c4);
   --accent2: var(--c1);
 
@@ -47,15 +43,11 @@ body{
   line-height: 1.55;
 }
 
-/* Contenedor general centrado */
 header, .intro, .gallery, footer{
   width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
 }
 
-/* =========================
-   Header
-========================= */
 header{
   padding: 56px 0 18px;
 }
@@ -66,7 +58,7 @@ h1{
   letter-spacing: -0.03em;
   font-weight: 650;
 
-  /* Título con degradado colorido */
+  
   background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
   -webkit-background-clip: text;
   background-clip: text;
@@ -79,9 +71,6 @@ h1{
   font-size: 1.05rem;
 }
 
-/* =========================
-   Intro
-========================= */
 .intro{
   margin-top: 10px;
   padding: 22px 22px;
@@ -101,9 +90,7 @@ h1{
   font-size: 1.05rem;
 }
 
-/* =========================
-   Galería (Grid)
-========================= */
+
 .gallery{
   margin-top: 28px;
   padding: 0 0 38px;
@@ -112,7 +99,7 @@ h1{
   gap: 16px;
 }
 
-/* Tarjeta de obra */
+
 .piece{
   grid-column: span 6;
   display: block;
@@ -120,7 +107,7 @@ h1{
   border: 1px solid var(--line);
   border-radius: 18px;
 
-  /* Fondo más vivo pero elegante */
+ 
   background:
     linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
   text-decoration: none;
@@ -131,7 +118,7 @@ h1{
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-/* Brillos coloridos */
+
 .piece::before{
   content: "";
   position: absolute;
@@ -144,7 +131,6 @@ h1{
   pointer-events: none;
 }
 
-/* Línea arcoíris al hover */
 .piece::after{
   content: "";
   position: absolute;
@@ -185,7 +171,7 @@ h1{
   transform: translateY(0);
 }
 
-/* Focus accesible (teclado) */
+
 .piece:focus{
   outline: none;
 }
@@ -194,9 +180,6 @@ h1{
   outline-offset: 4px;
 }
 
-/* =========================
-   Footer
-========================= */
 footer{
   padding: 22px 0 42px;
   text-align: center;
@@ -205,9 +188,6 @@ footer{
   font-size: 0.95rem;
 }
 
-/* =========================
-   Responsive
-========================= */
 @media (max-width: 900px){
   header{ padding-top: 44px; }
   .piece{ grid-column: span 12; }
@@ -225,11 +205,12 @@ footer{
   
 }
 
-/* Barra completa para la memoria */
+
 .piece-wide{
-  grid-column: span 12;   /* ocupa toda la fila */
-  text-align: center;       /* o center si quieres */
+  grid-column: span 12;  
+  text-align: center;       
   font-weight: 600;
 }
+
 
 
